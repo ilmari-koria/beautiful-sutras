@@ -14,7 +14,9 @@ Buddhist Chinese Works Revivified
   LuaTeXja via XSLT.
 
   Note that this project is work in progress and is at an early stage.
-
+  It is a great way for me to procrastinate learning Classical
+  Chinese.
+  
   Texts are sourced from CBETA 漢文大藏經
   (<http://tripitaka.cbeta.org/>).
 
@@ -31,3 +33,25 @@ Usage
   ,----
   | generate-pdf.sh X69n1336
   `----
+
+~~~~
+
+ _______
+< 阿彌陀佛 >
+ -------
+         \     ,-.      .-,
+          \    |-.\ __ /.-|
+           \   \  `    `  /
+                /_     _ \
+              <  _`q  p _  >
+              <.._=/  \=_. >
+                 {`\()/`}`\
+                 {      }  \
+                 |{    }    \
+                 \ '--'   .- \
+                 |-      /    \
+                 | | | | |     ;
+                 | | |.;.,..__ |
+               .-"";`         `|
+              /    |           /
+              `-../____,..---'`
