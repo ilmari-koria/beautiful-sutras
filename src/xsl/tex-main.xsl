@@ -4,7 +4,7 @@
                 xmlns:fn="http://www.w3.org/2005/xpath-functions"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:cb="http://www.cbeta.org/ns/1.0"
-                xmlns:lib-bs="http://www.beautifulsutras.site"
+                xmlns:lib-bs="http://www.beautifulsutras.xyz"
                 version="3.0">
   <xsl:output method="text"
               encoding="UTF-8"

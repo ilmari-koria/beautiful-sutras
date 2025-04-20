@@ -1,5 +1,5 @@
 xquery version "3.1";
-module namespace lib-bs = "http://www.beautifulsutras.site";
+module namespace lib-bs = "http://www.beautifulsutras.xyz";
 declare namespace locale = "java:java.util.Locale";
 
 (: TODO should this use fetch:binary? :)
@@ -23,7 +23,9 @@ declare %public function lib-bs:check-lang($lang-code as xs:string)
     where contains($lang, lower-case($lang-code))
     return 
       if ($lang = "") then
-        fn:error(QName("http://www.beautifulsutras.site/errors", "lang-error"), "language error.")
+        fn:error(QName("http://www.beautifulsutras.xyz/errors", "lang-error"), "language error.")
       else 
         true()
 };
+
+  

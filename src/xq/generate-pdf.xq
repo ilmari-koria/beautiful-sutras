@@ -1,5 +1,5 @@
 xquery version "3.1";
-import module namespace lib-bs = "http://www.beautifulsutras.site";
+import module namespace lib-bs = "http://www.beautifulsutras.xyz";
 declare namespace tei = "http://www.tei-c.org/ns/1.0";
 declare namespace cb = "http://www.cbeta.org/ns/1.0";
 declare option output:indent "yes";

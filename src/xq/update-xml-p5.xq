@@ -1,5 +1,5 @@
 xquery version "3.1";
-import module namespace lib-bs = "http://www.beautifulsutras.site";
+import module namespace lib-bs = "http://www.beautifulsutras.xyz";
 declare option output:indent "yes";
 declare variable $lib-bs:xml-p5-stable as xs:string := "https://github.com/ilmari-koria/xml-p5/archive/refs/heads/master.zip";
 declare variable $lib-bs:tmp-dir as xs:string := "../../tmp/" ;

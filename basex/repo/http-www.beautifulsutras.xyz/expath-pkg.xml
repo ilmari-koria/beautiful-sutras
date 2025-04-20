@@ -1,15 +1,15 @@
 <package xmlns="http://expath.org/ns/pkg"
-         name="http://www.beautifulsutras.site"
+         name="http://www.beautifulsutras.xyz"
          abbrev="beautifulsutras"
          version="0.1"
          spec="1.0">
   <title>Beautiful Sutras library</title>
   <xquery>
-    <namespace>http://www.beautifulsutras.site</namespace>
+    <namespace>http://www.beautifulsutras.xyz</namespace>
     <file>beautiful-sutras.xqm</file>
   </xquery>
   <xslt>
-    <import-uri>http://www.beautifulsutras.site/style.xsl</import-uri>
+    <import-uri>http://www.beautifulsutras.xyz/style.xsl</import-uri>
     <file>beautiful-sutras.xsl</file>
   </xslt>
 </package>
