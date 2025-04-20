@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<commands>
+  <xquery>fn:message("Generating PDF...")</xquery>
+  <run file=''/>
+  <xquery>fn:message("PDF Generated...")</xquery>
+</commands>
