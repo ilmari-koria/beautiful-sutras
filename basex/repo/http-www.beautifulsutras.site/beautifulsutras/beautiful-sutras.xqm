@@ -23,7 +23,7 @@ declare %public function lib-bs:check-lang($lang-code as xs:string)
     where contains($lang, lower-case($lang-code))
     return 
       if ($lang = "") then
-        fn:error(QName("http://www.beautifulsutras.site/errors", "lang-error"), "language error.")
+ x       fn:error(QName("http://www.beautifulsutras.site/errors", "lang-error"), "language error.")
       else 
         true()
 };
