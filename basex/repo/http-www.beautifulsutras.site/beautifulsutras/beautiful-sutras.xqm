@@ -8,7 +8,7 @@ declare %public function lib-bs:download-zip-file-and-return-uri(
   $out-path as xs:string) 
   as xs:anyURI {    
     let $request-response := 
-      http:send-request(<http:request method='GET'/>, $file-uri)
+      http:send-request(<http:request method='GET' timeout='360' />, $file-uri)
     let $request-body := tail($request-response)
     return (
       fn:message("Downloading file: " || $file-uri),
@@ -23,7 +23,7 @@ declare %public function lib-bs:check-lang($lang-code as xs:string)
     where contains($lang, lower-case($lang-code))
     return 
       if ($lang = "") then
- x       fn:error(QName("http://www.beautifulsutras.site/errors", "lang-error"), "language error.")
+        fn:error(QName("http://www.beautifulsutras.site/errors", "lang-error"), "language error.")
       else 
         true()
 };
