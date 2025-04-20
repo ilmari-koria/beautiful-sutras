@@ -10,6 +10,7 @@ declare variable $stylesheet as xs:anyURI := file:path-to-uri(fn:resolve-uri("..
 declare variable $tmp-dir as xs:anyURI := file:path-to-uri(fn:resolve-uri("../../tmp/"));
 
 (: These functions are not very generic, so I am keeping them local :)
+(: TODO add error handling :)
 
 declare function local:return-result(
   $cbeta-id as xs:string)
@@ -27,7 +28,7 @@ declare function local:generate-tex-file-and-return-path(
   $input-xml as node()*,
   $cbeta-id as xs:string) 
   as xs:string {
-  let $out-path := $tmp-dir || 'out.tex'
+  let $out-path := $tmp-dir || $cbeta-id || '-out.tex'
   let $transform := 
     file:write($out-path,
     xslt:transform-text(
@@ -45,16 +46,17 @@ declare function local:generate-tex-file-and-return-path(
 declare function local:generate-pdf-with-lualatex-and-return-path(
   $tex-file-path as xs:string,
   $output-dir as xs:string) 
-  as xs:string {
+  as xs:anyAtomicType {
   let $args := (
     "-interaction=batchmode",
     "-output-directory", $output-dir,
     $tex-file-path
    )
+   let $out-file-name := fn:replace(file:name($tex-file-path), '.tex', '.pdf')
    return (
-    proc:system("lualatex", $args)
-    
-  )
+    proc:system("lualatex", $args),
+    fn:message('File generated in: ' || $output-dir || '/' || $out-file-name    
+  ))
 };
 
 let $tex-file := 
