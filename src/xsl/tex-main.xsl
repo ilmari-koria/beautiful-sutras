@@ -17,8 +17,6 @@
   <!-- this stylesheet should not be auto-indented. -->
 
   <xsl:template match="/">
-      <!-- % !TEX encoding = UTF-8 -->
-      <!-- % !TEX program = lualatex -->
       <xsl:call-template name="headers">
         <xsl:with-param name="title" select="//tei:title[@xml:lang='zh-Hant']" />
         <xsl:with-param name="date" select="lib-bs:return-chinese-date(fn:substring-before(//tei:date, ' '))" />
@@ -45,6 +43,4 @@
                          tei:byline |
                          cb:div[@type='add-notes'] |
                          cb:div[@type='apparatus']"/>
-
-
 </xsl:stylesheet>
