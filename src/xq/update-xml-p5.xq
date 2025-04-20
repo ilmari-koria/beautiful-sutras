@@ -1,8 +1,14 @@
 xquery version "3.1";
 import module namespace lib-bs = "http://www.beautifulsutras.site";
 declare option output:indent "yes";
-declare variable $lib-bs:xml-p5-stable as xs:string := "https://github.com/ilmari-koria/utils/archive/refs/heads/master.zip";
-declare variable $lib-bs:working-dir as xs:string := "." ;
+declare variable $lib-bs:xml-p5-stable as xs:string := "https://github.com/ilmari-koria/xml-p5/archive/refs/heads/master.zip";
+declare variable $lib-bs:tmp-dir as xs:string := "../../tmp/" ;
 
-
-lib-bs:download-zip-file($lib-bs:xml-p5-stable,'file.zip')
+(: TODO ftindex tokenizer for zh :)
+db:create(
+  'xml-p5', 
+  lib-bs:download-zip-file-and-return-uri(
+    $lib-bs:xml-p5-stable, 
+    file:resolve-path($lib-bs:tmp-dir) || 'xml-p5.zip'
+  )
+)
