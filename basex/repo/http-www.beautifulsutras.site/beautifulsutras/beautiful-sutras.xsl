@@ -11,5 +11,4 @@
     <xsl:value-of select="fn:format-date(xs:date($date), '[Y0001]年[M01]月[D01]日')"/>
   </xsl:function>
 
-
 </xsl:stylesheet>
