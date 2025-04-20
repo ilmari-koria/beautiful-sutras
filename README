@@ -17,3 +17,17 @@ Buddhist Chinese Works Revivified
 
   Texts are sourced from CBETA 漢文大藏經
   (<http://tripitaka.cbeta.org/>).
+
+
+Usage
+~~~~
+
+  ,----
+  | generate-pdf.sh 'cbeta_id'
+  `----
+
+  E.g.:
+
+  ,----
+  | generate-pdf.sh X69n1336
+  `----
