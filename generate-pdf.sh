@@ -9,3 +9,5 @@ mkdir $PUBLISH_DIR
 $BASEX -bpublish-path=$PUBLISH_DIR \
        -bcbeta-id="$1" \
        -c $BXS
+
+rm $PUBLISH_DIR/*.log $PUBLISH_DIR/*.aux
