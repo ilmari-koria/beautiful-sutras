@@ -3,9 +3,13 @@
          abbrev="beautifulsutras"
          version="0.1"
          spec="1.0">
-   <title>Beautiful sutras library</title>
-   <xquery>
-      <namespace>http://www.beautifulsutras.site</namespace>
-      <file>beautiful-sutras.xqm</file>
-   </xquery>
+  <title>Beautiful Sutras library</title>
+  <xquery>
+    <namespace>http://www.beautifulsutras.site</namespace>
+    <file>beautiful-sutras.xqm</file>
+  </xquery>
+  <xslt>
+    <import-uri>http://www.beautifulsutras.site/style.xsl</import-uri>
+    <file>beautiful-sutras.xsl</file>
+  </xslt>
 </package>
