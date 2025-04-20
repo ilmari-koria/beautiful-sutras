@@ -11,7 +11,9 @@ Buddhist Chinese Works Revivified
 
   This repository contains my hobby project learning to typeset
   Buddhist Chinese works into a modern-ish format with LuaTeX and
-  LuaTeXja via XSLT. Note that this project is work in progress.
+  LuaTeXja via XSLT.
+
+  Note that this project is work in progress and is at an early stage.
 
   Texts are sourced from CBETA 漢文大藏經
   (<http://tripitaka.cbeta.org/>).
