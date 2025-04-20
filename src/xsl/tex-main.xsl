@@ -11,7 +11,7 @@
               indent="no"
               omit-xml-declaration="yes"/>
 
-  <xsl:include href="/home/ilmari/my-files/projects/beautiful-sutras/basex/repo/http-www.beautifulsutras.site/beautifulsutras/beautiful-sutras.xsl"/>
+  <xsl:include href="../../basex/repo/http-www.beautifulsutras.site/beautifulsutras/beautiful-sutras.xsl"/>
   <xsl:include href="./tex-headers.xsl"/>
 
   <!-- this stylesheet should not be auto-indented. -->
