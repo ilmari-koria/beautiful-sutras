@@ -41,7 +41,7 @@ declare %public function lib-bs:generate-tex-file-and-return-path(
   )
 };
 
-declare %public function lib-bs:generate-pdf-with-lualatex-and-return-path(
+declare %public function lib-bs:generate-pdf-with-lualatex(
   $tex-file-path as xs:string,
   $output-dir as xs:string) 
   {
@@ -50,7 +50,6 @@ declare %public function lib-bs:generate-pdf-with-lualatex-and-return-path(
     "-output-directory", $output-dir,
     $tex-file-path
    )
-   (: let $out-file-name := fn:replace(file:name($tex-file-path), '.tex', '.pdf') :)
    return (
       proc:system("lualatex", $args)
    )
