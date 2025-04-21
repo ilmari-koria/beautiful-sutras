@@ -22,19 +22,19 @@ declare
     </head>
     <body>
       <h1>{$web-bs:title}</h1>
-      <h2>Welcome to {$web-bs:title}.</h2>
       <p>Generate PDF:</p>
-       { if ($msg != "") then 
-    <p style="color:green;">
-      PDF ready: <a href="{$msg}" target="_blank">Download</a>
-    </p>
-  else () }
-
-        <form method="post" action="/index/submit">
-          <label for="cbeta-id">Enter ID: </label>
-          <input type="text" name="cbeta-id" id="cbeta-id"/>
-          <input type="submit" value="Submit"/>
-        </form>
+      {
+       if ($msg != "") then 
+         <p>
+           PDF ready: <a href="{$msg}" target="_blank">Download</a>
+         </p>
+       else ()
+      }
+      <form method="post" action="/index/submit">
+        <label for="cbeta-id">Enter ID: </label>
+        <input type="text" name="cbeta-id" id="cbeta-id"/>
+        <input type="submit" value="Submit"/>
+      </form>
     </body>
   </html>
 };
@@ -72,5 +72,6 @@ declare
    : TODO should this be in the actual function itself? 
    :)
   let $_ := lib-bs:generate-pdf-with-lualatex($tex-file, $web-bs:publish-path)
-  return $out-path
+  return
+    $out-path
 };
