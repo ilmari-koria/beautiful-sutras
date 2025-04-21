@@ -35,4 +35,5 @@ This software uses the following licenses and third-party libraries:
   [3] Lua         ./basex/assets/lua/doc/readme.html
   [4] Noto Fonts  https://github.com/notofonts/noto-fonts/blob/main/LICENSE
   [5] LuaTeX      https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/master/COPYING
-  
+  [6] CBETA       https://www.cbeta.org/copyright.php
+
