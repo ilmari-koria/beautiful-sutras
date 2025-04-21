@@ -5,3 +5,4 @@ basex/.basexhistory
 basex/webapp/tmp
 basex/tmp/
 basex/webapp/static/publish
+deploy-to-server.sh
