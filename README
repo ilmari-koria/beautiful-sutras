@@ -21,9 +21,7 @@ Buddhist Chinese Works Revivified
   (<http://tripitaka.cbeta.org/>).
 
 
-Usage (Debian only)
+Live Site
 ~~~~~~~~~~~~~~~~~~~
 
-  ,----
-  | ./run src/lua/generate-pdf.lua X69n1336
-  `----
+  <https://beautifulsutras.xyz>
