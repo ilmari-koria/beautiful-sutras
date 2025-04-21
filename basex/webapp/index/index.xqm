@@ -1,7 +1,7 @@
 xquery version "3.1";
 module namespace web-bs = "http://www.beautifulsutras.xyz/webapp";
 import module namespace lib-bs = "http://www.beautifulsutras.xyz";
-declare variable $web-bs:title as xs:string := "📜 Beautiful Sūtras 📜";
+declare variable $web-bs:title as xs:string := "Beautiful Sūtras";
 declare variable $web-bs:stable-uri as xs:anyURI := "http://www.beautifulsutras.xyz";
 declare variable $web-bs:author as xs:string := "Ilmari Koria";
 declare variable $web-bs:email as xs:anyURI := "mailto:beautifulsutras@posteo.net";
@@ -21,20 +21,39 @@ declare
       <link rel="stylesheet" type="text/css" href="/static/style.css"/>
     </head>
     <body>
-      <h1>{$web-bs:title}</h1>
-      <p>Generate Sūtra:</p>
-      {
-       if ($msg != "") then 
-         <p>
-           PDF ready: <a href="{$msg}" target="_blank">Download</a>
-         </p>
-       else ()
-      }
-      <form method="post" action="/index/submit">
-        <label for="cbeta-id">Enter ID: </label>
-        <input type="text" name="cbeta-id" id="cbeta-id"/>
-        <input type="submit" value="Submit"/>
-      </form>
+      <header>
+        <h1>📜 {$web-bs:title} 📜</h1>
+      </header>
+      <main>
+        <p>Generate a sūtra:</p>
+        {
+         if ($msg != "") then 
+           <p>
+             PDF ready: <a href="{$msg}" target="_blank">Download</a>
+           </p>
+         else ()
+        }
+        <form method="post" action="/index/submit">
+          <label for="cbeta-id">Enter a CBETA id</label><br/>
+          <input type="text" name="cbeta-id" id="cbeta-id"/><br/>
+          <input type="submit" value="Submit"/>
+        </form>
+        <p>For example:</p>
+        <ul>
+          <li>X69n1336</li>
+          <li>T08n0251</li>
+          <li>T01n0002</li>
+        </ul>
+        <p>ℹ️ All content sourced from <a href="http://tripitaka.cbeta.org">CBETA 漢文大藏經</a>.</p>
+        <p>
+          Made by <a href="https://ilmarikoria.xyz">Ilmari Koria</a>.
+          Contact: <a href="mailto:beautifulsutras@posteo.net">beautifulsutras@posteo.net</a>.
+        </p>
+      </main>
+      <footer>
+      <hr/>
+        <p>Powered by ⚡ <a href="https://basex.org/">BaseX</a>.</p>
+      </footer>
     </body>
   </html>
 };
@@ -83,4 +102,3 @@ declare
   function web-bs:redirect-root() {
     web:redirect("/index")
 };
-
