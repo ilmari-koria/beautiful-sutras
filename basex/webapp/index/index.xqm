@@ -5,7 +5,8 @@ declare variable $web-bs:title as xs:string := "Beautiful Sūtras";
 declare variable $web-bs:stable-uri as xs:anyURI := "http://www.beautifulsutras.xyz";
 declare variable $web-bs:author as xs:string := "Ilmari Koria";
 declare variable $web-bs:email as xs:anyURI := "mailto:beautifulsutras@posteo.net";
-declare variable $web-bs:publish-path as xs:string := $web-bs:stable-uri || "/tmp/publish/";
+declare variable $web-bs:publish-path as xs:string := "../webapp/tmp/publish";
+
 
 (:~ generate index html body :)
 declare
@@ -52,17 +53,17 @@ declare function web-bs:redirect($target as xs:string) {
 };
 
 declare
-  %rest:path("/index/publish")
+  %rest:path("/index/publish/{$cbeta-id}")
   %rest:GET
   function
     web-bs:generate-pdf-and-return-uri(
-    $cbeta-id as xs:string){
+    $cbeta-id){
   let $tex-file := 
     lib-bs:generate-tex-file-and-return-path(
       $lib-bs:tmp-dir, 
-      lib-bs:return-result($lib-bs:cbeta-id),
+      lib-bs:return-result($cbeta-id),
       $cbeta-id
     )
-  return
+  return 
     lib-bs:generate-pdf-with-lualatex-and-return-path($tex-file, $web-bs:publish-path)
 };
