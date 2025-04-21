@@ -22,6 +22,13 @@ Buddhist Chinese Works Revivified
 
 
 Live Site
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
 
   https://beautifulsutras.xyz
+
+
+This software uses the following licenses and third-party libraries:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  [1] BaseX     ./basex/LICENSE
+  [2] SaxonJ HE ./basex/lib/notices
+  [3] Lua       ./basex/assets/lua/doc/readme.html
