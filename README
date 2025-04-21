@@ -11,7 +11,7 @@ Buddhist Chinese Works Revivified
 
   This repository contains my hobby project learning to typeset
   Buddhist Chinese works into a modern-ish format with LuaTeX/LuaTeXja
-  using XSLT and Lua.
+  using XSLT, XQuery and Lua.
 
   Note that this project is work in progress and is at an early stage.
   It is a great way for me to procrastinate actually learning
