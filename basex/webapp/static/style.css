@@ -1,3 +1,6 @@
-h1 {
-    font-size: 200%;
+body {
+    max-width: 50rem;
+    margin: auto;
+    padding: 0.5rem;
+    font-family: sans;
 }
