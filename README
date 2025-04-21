@@ -30,9 +30,9 @@ Live Site
 This software uses the following licenses and third-party libraries:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  [1] BaseX       ./basex/LICENSE
-  [2] SaxonJ HE   ./basex/lib/notices
-  [3] Lua         ./basex/assets/lua/doc/readme.html
+  [1] BaseX       https://github.com/BaseXdb/basex/blob/main/LICENSE
+  [2] SaxonJ HE   https://www.mozilla.org/en-US/MPL/2.0/
+  [3] Lua         https://www.lua.org/license.html
   [4] Noto Fonts  https://github.com/notofonts/noto-fonts/blob/main/LICENSE
   [5] LuaTeX      https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/master/COPYING
   [6] CBETA       https://www.cbeta.org/copyright.php
