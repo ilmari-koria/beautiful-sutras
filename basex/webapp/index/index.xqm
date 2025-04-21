@@ -44,15 +44,16 @@ declare
           <li>T08n0251</li>
           <li>T01n0002</li>
         </ul>
-        <p>ℹ️ All content sourced from <a href="http://tripitaka.cbeta.org">CBETA 漢文大藏經</a>.</p>
-        <p>
-          Made by <a href="https://ilmarikoria.xyz">Ilmari Koria</a>.
-          Contact: <a href="mailto:beautifulsutras@posteo.net">beautifulsutras@posteo.net</a>.
-        </p>
+        <p>All content sourced from <a href="http://tripitaka.cbeta.org">CBETA 漢文大藏經</a>.</p>
+        <p>Compiled by <a href="https://ilmarikoria.xyz">Ilmari Koria</a>.</p>
+        <ul>
+          <li><a href="mailto:beautifulsutras@posteo.net">beautifulsutras@posteo.net</a></li>
+          <li><a href="https://github.com/ilmari-koria/beautiful-sutras">Source</a></li>
+        </ul>
       </main>
       <footer>
       <hr/>
-        <p>Powered by ⚡ <a href="https://basex.org/">BaseX</a>.</p>
+        <p>Powered by ⚡ <a href="https://basex.org/">BaseX</a></p>
       </footer>
     </body>
   </html>
