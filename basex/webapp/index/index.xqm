@@ -75,3 +75,12 @@ declare
   return
     $out-path
 };
+
+(: TODO should this redirection be handled by nginx?? :)
+declare
+  %rest:path("/")
+  %rest:GET
+  function web-bs:redirect-root() {
+    web:redirect("/index")
+};
+
