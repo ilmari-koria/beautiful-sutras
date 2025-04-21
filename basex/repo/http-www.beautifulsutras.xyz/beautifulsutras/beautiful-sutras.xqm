@@ -2,7 +2,7 @@ xquery version "3.1";
 module namespace lib-bs = "http://www.beautifulsutras.xyz";
 declare namespace locale = "java:java.util.Locale";
 
-(: TODO should this use fetch:binary? :)
+(: TODO this needs to use cURL :) 
 declare %public function lib-bs:download-zip-file-and-return-uri(
   $file-uri as xs:string,
   $out-path as xs:string) 
