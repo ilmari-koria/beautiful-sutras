@@ -6,9 +6,6 @@ declare namespace tei = "http://www.tei-c.org/ns/1.0";
 declare namespace cb = "http://www.cbeta.org/ns/1.0";
 declare namespace locale = "java:java.util.Locale";
 
-declare variable $lib-bs:publish-path as xs:string external;
-declare variable $lib-bs:cbeta-id as xs:string external;
-
 declare variable $lib-bs:stylesheet as xs:anyURI := file:path-to-uri(fn:resolve-uri("../../../src/xsl/tex-main.xsl"));
 declare variable $lib-bs:tmp-dir as xs:anyURI := file:path-to-uri(fn:resolve-uri("../../../tmp/"));
 
@@ -17,7 +14,7 @@ declare %public function lib-bs:return-result(
   $cbeta-id as xs:string)
   as node()* {
   let $xml-id :=
-    fn:normalize-space($lib-bs:cbeta-id)
+    fn:normalize-space($cbeta-id)
   let $xml-result :=
     collection("xml-p5")//tei:TEI[@xml:id=$xml-id]
   return
@@ -29,11 +26,11 @@ declare %public function lib-bs:generate-tex-file-and-return-path(
   $input-xml as node()*,
   $cbeta-id as xs:string) 
   as xs:string {
-  let $out-path := $lib-bs:tmp-dir || $lib-bs:cbeta-id || '-out.tex'
+  let $out-path := $lib-bs:tmp-dir || $cbeta-id || '-out.tex'
   let $transform := 
     file:write($out-path,
     xslt:transform-text(
-      lib-bs:return-result($lib-bs:cbeta-id),
+      lib-bs:return-result($cbeta-id),
       $lib-bs:stylesheet,
       { 'method': 'text' }
     ) 
@@ -47,16 +44,15 @@ declare %public function lib-bs:generate-tex-file-and-return-path(
 declare %public function lib-bs:generate-pdf-with-lualatex-and-return-path(
   $tex-file-path as xs:string,
   $output-dir as xs:string) 
-  as xs:anyAtomicType {
+  {
   let $args := (
     "-interaction=batchmode",
     "-output-directory", $output-dir,
     $tex-file-path
    )
-   let $out-file-name := fn:replace(file:name($tex-file-path), '.tex', '.pdf')
+   (: let $out-file-name := fn:replace(file:name($tex-file-path), '.tex', '.pdf') :)
    return (
-     proc:system("lualatex", $args),
-     fn:message('File generated in: ' || $output-dir || '/' || $out-file-name)
+      proc:system("lualatex", $args)
    )
 };
 
