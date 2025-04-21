@@ -64,6 +64,18 @@ declare
       lib-bs:return-result($cbeta-id),
       $cbeta-id
     )
-  return 
-    lib-bs:generate-pdf-with-lualatex-and-return-path($tex-file, $web-bs:publish-path)
+  let $pdf-path := lib-bs:generate-pdf-with-lualatex(
+    $tex-file,
+    $web-bs:publish-path
+  )
+  let $filename := $pdf-path
+  let $public-url := "file:///home/ilmari/my-files/projects/beautiful-sutras/basex/webapp/tmp/publish" || $filename
+  return (
+    <html>
+      <body>
+        <p>PDF generated for ID: {$cbeta-id}</p>
+        <p><a href="{$public-url}" target="_blank">Download your PDF</a></p>
+      </body>
+    </html>
+  )
 };
