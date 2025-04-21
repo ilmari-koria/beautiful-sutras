@@ -2,3 +2,5 @@ basex/.basexgui
 basex/.basex
 basex/data
 basex/.basexhistory
+basex/webapp/tmp
+basex/tmp/
