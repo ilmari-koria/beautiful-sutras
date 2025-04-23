@@ -48,7 +48,7 @@ declare
         <p>Compiled by <a href="https://ilmarikoria.xyz">Ilmari Koria</a>.</p>
         <ul>
           <li>Contact: <a href="mailto:beautifulsutras@posteo.net">beautifulsutras@posteo.net</a></li>
-          <li>Source: <a href="https://github.com/ilmari-koria/beautiful-sutras">Source</a></li>
+          <li>Source: <a href="https://github.com/ilmari-koria/beautiful-sutras">GitHub</a></li>
         </ul>
       </main>
       <footer>
