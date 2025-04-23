@@ -47,8 +47,8 @@ declare
         <p>All content sourced from <a href="http://tripitaka.cbeta.org">CBETA 漢文大藏經</a>.</p>
         <p>Compiled by <a href="https://ilmarikoria.xyz">Ilmari Koria</a>.</p>
         <ul>
-          <li><a href="mailto:beautifulsutras@posteo.net">beautifulsutras@posteo.net</a></li>
-          <li><a href="https://github.com/ilmari-koria/beautiful-sutras">Source</a></li>
+          <li>Contact: <a href="mailto:beautifulsutras@posteo.net">beautifulsutras@posteo.net</a></li>
+          <li>Source: <a href="https://github.com/ilmari-koria/beautiful-sutras">Source</a></li>
         </ul>
       </main>
       <footer>
