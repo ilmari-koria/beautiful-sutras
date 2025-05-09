@@ -24,7 +24,8 @@ declare %public function lib-bs:return-result(
 declare %public function lib-bs:generate-tex-file-and-return-path(
   $out-dir as xs:string, 
   $input-xml as node()*,
-  $cbeta-id as xs:string) 
+  $cbeta-id as xs:string,
+  $font as xs:string) 
   as xs:string {
   let $out-path := $lib-bs:tmp-dir || $cbeta-id || '-out.tex'
   let $transform := 
@@ -32,7 +33,10 @@ declare %public function lib-bs:generate-tex-file-and-return-path(
     xslt:transform-text(
       lib-bs:return-result($cbeta-id),
       $lib-bs:stylesheet,
-      { 'method': 'text' }
+        {
+           'method':'text',
+           'font': $font
+        }
     ) 
   )
   return (
