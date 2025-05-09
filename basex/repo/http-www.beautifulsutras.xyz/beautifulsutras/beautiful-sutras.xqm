@@ -35,7 +35,7 @@ declare %public function lib-bs:generate-tex-file-and-return-path(
       $lib-bs:stylesheet,
         {
            'method':'text',
-           'font': $font
+           'font':$font
         }
     ) 
   )
