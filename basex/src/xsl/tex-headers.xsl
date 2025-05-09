@@ -8,7 +8,8 @@
     <xsl:param name="title" />
     <xsl:param name="author" />
     <xsl:param name="date" />
-
+    <xsl:param name="font" />
+    
     % !TEX encoding = UTF-8
     % !TEX program = lualatex
     
@@ -32,7 +33,7 @@
 
     <!-- TODO check if there is a better way to load fonts luatexja? -->
     \usepackage{luatexja-fontspec}
-    \setmainjfont{NotoSerifCJK-Regular.ttc}
+    \setmainjfont{<xsl:value-of select="$font"/>}
 
     <!-- TODO title styling placeholder -->
     \usepackage{titlesec}
