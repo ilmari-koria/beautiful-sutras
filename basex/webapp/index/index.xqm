@@ -9,6 +9,7 @@ declare variable $web-bs:publish-path as xs:string := "../webapp/static/publish"
 declare variable $web-bs:font as xs:string := "NotoSerifCJK-Regular.ttc"
 
 (:~ generate index html body :)
+(: TODO this should be split up :)
 declare
   %rest:path('/index')
   %output:method('html')
@@ -67,38 +68,40 @@ declare
   %rest:path("/index/submit")
   %rest:POST
   %rest:form-param("cbeta-id", "{$cbeta-id}", "")
-  function web-bs:submit-id($cbeta-id as xs:string) {
-    let $normalized := fn:normalize-space($cbeta-id)
-    let $pdf-uri := web-bs:generate-pdf($normalized)
-    return web-bs:redirect("/index?msg=" || encode-for-uri($pdf-uri))
+    function web-bs:submit-id($cbeta-id as xs:string) {
+      let $normalized := fn:normalize-space($cbeta-id)
+      let $pdf-uri := web-bs:generate-pdf($normalized)
+      return
+        web-bs:redirect("/index?msg=" || encode-for-uri($pdf-uri))
 };
 
-declare function web-bs:redirect($target as xs:string) {
-  <rest:response>
-    <http:response status="303">
-      <http:header name="Location" value="{$target}"/>
-    </http:response>
-  </rest:response>
+declare
+  function web-bs:redirect($target as xs:string) {
+    <rest:response>
+      <http:response status="303">
+        <http:header name="Location" value="{$target}"/>
+      </http:response>
+    </rest:response>
 };
 
 declare
   %rest:path("/index/publish/{$cbeta-id}")
   function web-bs:generate-pdf($cbeta-id as xs:string) as xs:string {
-  let $tex-file :=
-    lib-bs:generate-tex-file-and-return-path(
-      $lib-bs:tmp-dir, 
-      lib-bs:return-result($cbeta-id),
-      $cbeta-id,
-      $lib-bs:font
-    )
-  let $out-path := "/static/publish/" || $cbeta-id || "-out.pdf"
-  (: The '$_' syntax here will disregard output. 
-   : I use this because the LuaLaTeX engine seems to always return something, even when run in batch mode.
-   : TODO should this be in the actual function itself? 
-   :)
-  let $_ := lib-bs:generate-pdf-with-lualatex($tex-file, $web-bs:publish-path)
-  return
-    $out-path
+    let $tex-file :=
+      lib-bs:generate-tex-file-and-return-path(
+        $lib-bs:tmp-dir, 
+        lib-bs:return-result($cbeta-id),
+        $cbeta-id,
+        $lib-bs:font
+      )
+    let $out-path := "/static/publish/" || $cbeta-id || "-out.pdf"
+    (: The '$_' syntax here will disregard output. 
+     : I use this because the LuaLaTeX engine seems to always return something, even when run in batch mode.
+     : TODO should this be in the actual function itself? 
+     :)
+    let $_ := lib-bs:generate-pdf-with-lualatex($tex-file, $web-bs:publish-path)
+    return
+      $out-path
 };
 
 (: TODO should this redirection be handled by nginx?? :)
