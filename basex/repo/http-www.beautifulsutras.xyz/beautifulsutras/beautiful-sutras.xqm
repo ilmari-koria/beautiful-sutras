@@ -9,7 +9,6 @@ declare namespace locale = "java:java.util.Locale";
 declare variable $lib-bs:stylesheet as xs:anyURI := file:path-to-uri(fn:resolve-uri("../../../src/xsl/tex-main.xsl"));
 declare variable $lib-bs:tmp-dir as xs:anyURI := file:path-to-uri(fn:resolve-uri("../../../tmp/"));
 
-
 declare %public function lib-bs:return-result(
   $cbeta-id as xs:string)
   as node()* {
@@ -24,8 +23,7 @@ declare %public function lib-bs:return-result(
 declare %public function lib-bs:generate-tex-file-and-return-path(
   $out-dir as xs:string, 
   $input-xml as node()*,
-  $cbeta-id as xs:string,
-  $font as xs:string) 
+  $cbeta-id as xs:string) 
   as xs:string {
   let $out-path := $lib-bs:tmp-dir || $cbeta-id || '-out.tex'
   let $transform := 
@@ -34,8 +32,7 @@ declare %public function lib-bs:generate-tex-file-and-return-path(
       lib-bs:return-result($cbeta-id),
       $lib-bs:stylesheet,
         {
-           'method':'text',
-           'font':$font
+           'method':'text'
         }
     ) 
   )
@@ -58,7 +55,6 @@ declare %public function lib-bs:generate-pdf-with-lualatex(
       proc:system("lualatex", $args)
    )
 };
-
 
 (: TODO this needs to use cURL :) 
 declare %public function lib-bs:download-zip-file-and-return-uri(
