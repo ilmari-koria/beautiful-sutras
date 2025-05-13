@@ -6,7 +6,6 @@ declare variable $web-bs:stable-uri as xs:anyURI := "http://www.beautifulsutras.
 declare variable $web-bs:author as xs:string := "Ilmari Koria";
 declare variable $web-bs:email as xs:anyURI := "mailto:beautifulsutras@posteo.net";
 declare variable $web-bs:publish-path as xs:string := "../webapp/static/publish";
-declare variable $web-bs:font as xs:string := "NotoSerifCJK-Regular.ttc";
 
 (:~ generate index html body :)
 (: TODO this should be split up :)
@@ -91,14 +90,9 @@ declare
       lib-bs:generate-tex-file-and-return-path(
         $lib-bs:tmp-dir, 
         lib-bs:return-result($cbeta-id),
-        $cbeta-id,
-        $web-bs:font
+        $cbeta-id
       )
     let $out-path := "/static/publish/" || $cbeta-id || "-out.pdf"
-    (: The '$_' syntax here will disregard output. 
-     : I use this because the LuaLaTeX engine seems to always return something, even when run in batch mode.
-     : TODO should this be in the actual function itself? 
-     :)
     let $_ := lib-bs:generate-pdf-with-lualatex($tex-file, $web-bs:publish-path)
     return
       $out-path
