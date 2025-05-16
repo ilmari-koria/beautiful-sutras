@@ -5,7 +5,9 @@ declare variable $web-bs:title as xs:string := "Beautiful Sūtras";
 declare variable $web-bs:stable-uri as xs:anyURI := "http://www.beautifulsutras.xyz";
 declare variable $web-bs:author as xs:string := "Ilmari Koria";
 declare variable $web-bs:email as xs:anyURI := "mailto:beautifulsutras@posteo.net";
-declare variable $web-bs:publish-path as xs:string := "../webapp/static/publish";
+
+(: TODO publish path should be relative :)
+declare variable $web-bs:publish-path as xs:string := "/var/www/beautiful-sutras/basex/webapp/static/publish";
 
 (:~ generate index html body :)
 (: TODO this should be split up :)
